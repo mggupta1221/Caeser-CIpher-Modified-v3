@@ -1,0 +1,15 @@
+C:\Users\gupt_muk\source\repos\EncryptDecrypt\EncryptDecrypt\bin\Debug\net6.0\EncryptDecrypt.exe
+C:\Users\gupt_muk\source\repos\EncryptDecrypt\EncryptDecrypt\bin\Debug\net6.0\EncryptDecrypt.deps.json
+C:\Users\gupt_muk\source\repos\EncryptDecrypt\EncryptDecrypt\bin\Debug\net6.0\EncryptDecrypt.runtimeconfig.json
+C:\Users\gupt_muk\source\repos\EncryptDecrypt\EncryptDecrypt\bin\Debug\net6.0\EncryptDecrypt.dll
+C:\Users\gupt_muk\source\repos\EncryptDecrypt\EncryptDecrypt\bin\Debug\net6.0\EncryptDecrypt.pdb
+C:\Users\gupt_muk\source\repos\EncryptDecrypt\EncryptDecrypt\obj\Debug\net6.0\EncryptDecrypt.csproj.AssemblyReference.cache
+C:\Users\gupt_muk\source\repos\EncryptDecrypt\EncryptDecrypt\obj\Debug\net6.0\EncryptDecrypt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gupt_muk\source\repos\EncryptDecrypt\EncryptDecrypt\obj\Debug\net6.0\EncryptDecrypt.AssemblyInfoInputs.cache
+C:\Users\gupt_muk\source\repos\EncryptDecrypt\EncryptDecrypt\obj\Debug\net6.0\EncryptDecrypt.AssemblyInfo.cs
+C:\Users\gupt_muk\source\repos\EncryptDecrypt\EncryptDecrypt\obj\Debug\net6.0\EncryptDecrypt.csproj.CoreCompileInputs.cache
+C:\Users\gupt_muk\source\repos\EncryptDecrypt\EncryptDecrypt\obj\Debug\net6.0\EncryptDecrypt.dll
+C:\Users\gupt_muk\source\repos\EncryptDecrypt\EncryptDecrypt\obj\Debug\net6.0\refint\EncryptDecrypt.dll
+C:\Users\gupt_muk\source\repos\EncryptDecrypt\EncryptDecrypt\obj\Debug\net6.0\EncryptDecrypt.pdb
+C:\Users\gupt_muk\source\repos\EncryptDecrypt\EncryptDecrypt\obj\Debug\net6.0\EncryptDecrypt.genruntimeconfig.cache
+C:\Users\gupt_muk\source\repos\EncryptDecrypt\EncryptDecrypt\obj\Debug\net6.0\ref\EncryptDecrypt.dll
