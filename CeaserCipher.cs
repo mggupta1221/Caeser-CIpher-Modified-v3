@@ -6,23 +6,42 @@ namespace CaeserCipherAlgorithm
     public class CaeserCipher
     {
         private StringBuilder cipheredText = new StringBuilder();
+        
 
-
-
+        /// <summary>
+        /// To check Passed ascii value is an alphabet or not
+        /// </summary>
+        /// <param name="alphabetsAsciiValue"></param>
+        /// <returns></returns>
         private bool IsAlphabet(int alphabetsAsciiValue)
         {
             return ((IsCapitalAlphabet(alphabetsAsciiValue) || IsSmallAlphabet(alphabetsAsciiValue)));
         }
+        /// <summary>
+        /// To check An Ascii value belongs to Capital Alphabet or not
+        /// </summary>
+        /// <param name="alphabetsAsciiValue"></param>
+        /// <returns></returns>
         private bool IsCapitalAlphabet(int alphabetsAsciiValue)
         {
             return (alphabetsAsciiValue >= 65 && alphabetsAsciiValue <= 90);
         }
+        /// <summary>
+        /// To checkk is an Ascii value belongs to small alphabet
+        /// </summary>
+        /// <param name="alphabetsAsciiValue"></param>
+        /// <returns></returns>
         private bool IsSmallAlphabet(int alphabetsAsciiValue)
         {
             return (alphabetsAsciiValue >= 97 && alphabetsAsciiValue <= 122);
         }
 
-
+        /// <summary>
+        /// Method to implement Caser cipher Algorithm
+        /// </summary>
+        /// <param name="inputString"></param>
+        /// <param name="shiftingFactor"></param>
+        /// <returns> StringBuilder</returns>
         public StringBuilder DoCeaserCipher(string inputString, int shiftingFactor)
         {
             char alphabetToBeAdded;
@@ -32,6 +51,8 @@ namespace CaeserCipherAlgorithm
                 if (IsAlphabet(alphabetsAsciiValue))
                 {
                     int alphabetsAsciiValueWithShiftinFactor = alphabetsAsciiValue + shiftingFactor;
+
+                    // if the alphabetsAsciiValueWithShiftinFactor is within alphabet Ascii range
                     if ((IsCapitalAlphabet(alphabetsAsciiValueWithShiftinFactor) && IsCapitalAlphabet(alphabetsAsciiValue)) || ((IsSmallAlphabet(alphabetsAsciiValueWithShiftinFactor) && IsSmallAlphabet(alphabetsAsciiValue))))
                     {
                         char cipheredCharacter = (char)alphabetsAsciiValueWithShiftinFactor;
@@ -89,7 +110,8 @@ namespace CaeserCipherAlgorithm
                 }
                 else
                 {
-                    cipheredText.Append(inputString[count]);
+                    //if the Ascii Value not corresponds to An Alphabet(Capital Or Small)
+                    cipheredText.Append(inputString[count]); 
                 }
             }
             return cipheredText;
