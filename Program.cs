@@ -10,7 +10,7 @@ public class Program
             Console.Write("Enter text:");
             string inputString = Console.ReadLine();
             Console.Write("Enter Shifting factor:");
-            bool isValidShiftingFactor = int.TryParse(Console.ReadLine(), out int shiftingFactor);
+            bool isValidShiftingFactor = long.TryParse(Console.ReadLine(), out long  shiftingFactor);
             if (isValidShiftingFactor)
             {
                 CaeserCipher ceaserCipher = new CaeserCipher();
