@@ -22,8 +22,8 @@ public class Program
             }
             else
             {
-                Console.WriteLine("Shifting Factor is invalid!!! Shifting factor must be a number within range of underlying datatype");
-                throw new ShiftingFactorException("Shifting Factor is invalid!!! Shifting factor must be a number within range of underlying datatype");
+                Console.WriteLine("Shifting Factor Is Invalid!!! Shifting factor Must Be A Number Within Range of Underlying Datatype");
+                throw new ShiftingFactorException("Shifting Factor Is Invalid!!! Shifting factor Must Be A Number Within Range of Underlying Datatype");
 
             }
     }
