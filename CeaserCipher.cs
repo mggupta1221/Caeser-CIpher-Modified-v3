@@ -66,16 +66,20 @@ namespace CaeserCipherAlgorithm
                         {
                             if (IsCapitalAlphabet(alphabetsAsciiValue))
                             {
-                                if (alphabetsAsciiValueWithShiftinFactor < 65)
+
+                                while(alphabetsAsciiValueWithShiftinFactor < 65)
                                 {
                                     alphabetsAsciiValueWithShiftinFactor = 90 - (64 - alphabetsAsciiValueWithShiftinFactor);
                                 }
                                 alphabetToBeAdded = (char)alphabetsAsciiValueWithShiftinFactor;
                                 cipheredText.Append(alphabetToBeAdded);
                             }
-                            else if (IsSmallAlphabet(alphabetsAsciiValue) && alphabetsAsciiValueWithShiftinFactor < 97)
+                            else if (IsSmallAlphabet(alphabetsAsciiValue))
                             {
-                                alphabetsAsciiValueWithShiftinFactor = 122 - (96 - alphabetsAsciiValueWithShiftinFactor);
+                                while(alphabetsAsciiValueWithShiftinFactor < 97)
+                                {
+                                    alphabetsAsciiValueWithShiftinFactor = 122 - (96 - alphabetsAsciiValueWithShiftinFactor);
+                                }
                                 alphabetToBeAdded = (char)alphabetsAsciiValueWithShiftinFactor;
                                 cipheredText.Append(alphabetToBeAdded);
                             }
