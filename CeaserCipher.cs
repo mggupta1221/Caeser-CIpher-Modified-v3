@@ -23,14 +23,15 @@ namespace CaeserCipherAlgorithm
             for (int count = 0; count < inputText.Length; count++)
             {
                 char alphabet = inputText[count];
-                if (CheckAlphabet.IsAlphabet(alphabet))
+                if (char.IsLetter(alphabet))
                 {
                     
                     char ShiftedAlphabet = Convert.ToChar(((long)alphabet + shiftingFactor));
 
                     // if the alphabetsAsciiValueWithShiftinFactor is within alphabet Ascii range
-                    if ((CheckAlphabet.IsCapitalAlphabet(ShiftedAlphabet) && CheckAlphabet.IsCapitalAlphabet(alphabet)) || ((CheckAlphabet.IsSmallAlphabet(ShiftedAlphabet) && CheckAlphabet.IsSmallAlphabet(alphabet))))
+                    if ((char.IsUpper(ShiftedAlphabet) && char.IsUpper(alphabet)) || ((char.IsLower(ShiftedAlphabet) && char.IsLower(alphabet))))
                     {
+                        
                         char cipheredCharacter = ShiftedAlphabet;
                         cipheredText.Append(cipheredCharacter);
                     }
@@ -38,9 +39,9 @@ namespace CaeserCipherAlgorithm
                     {
                         if (shiftingFactor > 0)
                         {
-                            if (CheckAlphabet.IsCapitalAlphabet(alphabet))
+                            if (char.IsUpper(alphabet))
                             {
-                                while (!CheckAlphabet.IsCapitalAlphabet(ShiftedAlphabet))
+                                while (!char.IsUpper(ShiftedAlphabet))
                                 {
                                     ShiftedAlphabet = Convert.ToChar((('A' - 1) + (ShiftedAlphabet - 'Z')));
 
@@ -49,9 +50,9 @@ namespace CaeserCipherAlgorithm
                                 appendAlphabet = ShiftedAlphabet;
                                 cipheredText.Append(appendAlphabet);
                             }
-                            else if (CheckAlphabet.IsSmallAlphabet(alphabet))
+                            else if (char.IsLower(alphabet))
                             {
-                                while (!CheckAlphabet.IsSmallAlphabet(ShiftedAlphabet))
+                                while (!char.IsLower(ShiftedAlphabet))
                                 {
                                     ShiftedAlphabet = Convert.ToChar((('a' - 1) + (ShiftedAlphabet - 'z')));
                                 }
@@ -62,7 +63,7 @@ namespace CaeserCipherAlgorithm
                         }
                         else
                         {
-                            if (CheckAlphabet.IsCapitalAlphabet(alphabet))
+                            if (char.IsUpper(alphabet))
                             {
 
                                 while (ShiftedAlphabet < 'A')
@@ -72,7 +73,7 @@ namespace CaeserCipherAlgorithm
                                 appendAlphabet = ShiftedAlphabet;
                                 cipheredText.Append(appendAlphabet);
                             }
-                            else if (CheckAlphabet.IsSmallAlphabet(alphabet))
+                            else if (char.IsLower(alphabet))
                             {
                                 while (ShiftedAlphabet < 'a')
                                 {
