@@ -8,13 +8,18 @@ public class Program
         try
         {
             Console.Write("Enter text:");
-            string inputString = Console.ReadLine();
+            string inputText = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(inputText))
+            {
+                Console.WriteLine("Input Text is Empty,Null Or Contains Whitespaces");
+                throw new Exception("Input Text is Empty,Null Or Contains Whitespaces");
+            }
             Console.Write("Enter Shifting factor:");
             bool isValidShiftingFactor = long.TryParse(Console.ReadLine(), out long  shiftingFactor);
             if (isValidShiftingFactor)
             {
                 CaeserCipher ceaserCipher = new CaeserCipher();
-                StringBuilder cipheredText = ceaserCipher.DoCeaserCipher(inputString, shiftingFactor);
+                StringBuilder cipheredText = ceaserCipher.DoCeaserCipher(inputText, shiftingFactor);
                 Console.WriteLine("Ciphered Text:" + cipheredText);
             }
             else

@@ -48,13 +48,16 @@ namespace CaeserCipherAlgorithm
         public StringBuilder DoCeaserCipher(string inputText, long shiftingFactor)
         {
             char appendAlphabet;
+            //Shifting Factor Value must be Between (-25,25) i.e -25 to 25
+            shiftingFactor = shiftingFactor % 26;
+            Console.WriteLine($"x:{shiftingFactor}");
             for (int count = 0; count < inputText.Length; count++)
             {
                 char alphabet = inputText[count];
                 if (IsAlphabet(alphabet))
                 {
                     
-                    char ShiftedAlphabet = (char)((long)alphabet + (long)shiftingFactor);
+                    char ShiftedAlphabet = (char)((long)alphabet + shiftingFactor);
 
                     // if the alphabetsAsciiValueWithShiftinFactor is within alphabet Ascii range
                     if ((IsCapitalAlphabet(ShiftedAlphabet) && IsCapitalAlphabet(alphabet)) || ((IsSmallAlphabet(ShiftedAlphabet) && IsSmallAlphabet(alphabet))))
@@ -70,7 +73,7 @@ namespace CaeserCipherAlgorithm
                             {
                                 while (!IsCapitalAlphabet(ShiftedAlphabet))
                                 {
-                                    ShiftedAlphabet = ConvertToChar((('A'-1)+ (ShiftedAlphabet - 'Z')));
+                                    ShiftedAlphabet = ConvertToChar((('A' - 1) + (ShiftedAlphabet - 'Z')));
 
                                 }
 
@@ -81,7 +84,7 @@ namespace CaeserCipherAlgorithm
                             {
                                 while (!IsSmallAlphabet(ShiftedAlphabet))
                                 {
-                                    ShiftedAlphabet = ConvertToChar((('a'-1) + (ShiftedAlphabet - 'z')));
+                                    ShiftedAlphabet = ConvertToChar((('a' - 1) + (ShiftedAlphabet - 'z')));
                                 }
 
                                 appendAlphabet = (char)ShiftedAlphabet;
@@ -93,18 +96,18 @@ namespace CaeserCipherAlgorithm
                             if (IsCapitalAlphabet(alphabet))
                             {
 
-                                while(ShiftedAlphabet < 'A')
+                                while (ShiftedAlphabet < 'A')
                                 {
-                                    ShiftedAlphabet = ConvertToChar(('Z' - (('A'-1) - ShiftedAlphabet)));
+                                    ShiftedAlphabet = ConvertToChar(('Z' - (('A' - 1) - ShiftedAlphabet)));
                                 }
                                 appendAlphabet = (char)ShiftedAlphabet;
                                 cipheredText.Append(appendAlphabet);
                             }
                             else if (IsSmallAlphabet(alphabet))
                             {
-                                while(ShiftedAlphabet < 'a')
+                                while (ShiftedAlphabet < 'a')
                                 {
-                                    ShiftedAlphabet = ConvertToChar(('z' - (('a'-1) - ShiftedAlphabet)));
+                                    ShiftedAlphabet = ConvertToChar(('z' - (('a' - 1) - ShiftedAlphabet)));
                                 }
                                 appendAlphabet = (char)ShiftedAlphabet;
                                 cipheredText.Append(appendAlphabet);
