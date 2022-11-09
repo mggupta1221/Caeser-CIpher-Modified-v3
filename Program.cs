@@ -7,11 +7,11 @@ public class Program
     {
             CaeserCipher ceaserCipher = new CaeserCipher();
             Console.Write("Enter text:");
-            string inputText = Console.ReadLine();
+            string? inputText = Console.ReadLine();
             if (string.IsNullOrEmpty(inputText))
             {
-                Console.WriteLine("Input Text is Empty or Null");
-                throw new InputTextException("Input Text is Empty or Null");
+                Console.WriteLine("Input Text Is Empty Or Null");
+                throw new InputTextException("Input Text Is Empty Or Null");
             }
             Console.Write("Enter Shifting factor:");
             bool isValidShiftingFactor = long.TryParse(Console.ReadLine(), out long  shiftingFactor);

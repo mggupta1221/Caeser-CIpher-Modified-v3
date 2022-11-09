@@ -77,7 +77,7 @@ namespace CaeserCipherAlgorithm
 
                                 }
 
-                                appendAlphabet = (char)ShiftedAlphabet;
+                                appendAlphabet = ShiftedAlphabet;
                                 cipheredText.Append(appendAlphabet);
                             }
                             else if (IsSmallAlphabet(alphabet))
