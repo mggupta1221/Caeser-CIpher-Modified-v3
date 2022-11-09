@@ -11,29 +11,29 @@ namespace CaeserCipherAlgorithm
         /// <summary>
         /// To check Passed ascii value is an alphabet or not
         /// </summary>
-        /// <param name="alphabetsAsciiValue"></param>
+        /// <param name="alphabet"></param>
         /// <returns></returns>
-        private bool IsAlphabet(int alphabetsAsciiValue)
+        private bool IsAlphabet(char alphabet)
         {
-            return ((IsCapitalAlphabet(alphabetsAsciiValue) || IsSmallAlphabet(alphabetsAsciiValue)));
+            return ((IsCapitalAlphabet(alphabet) || IsSmallAlphabet(alphabet)));
         }
         /// <summary>
         /// To check An Ascii value belongs to Capital Alphabet or not
         /// </summary>
-        /// <param name="alphabetsAsciiValue"></param>
+        /// <param name="alphabet"></param>
         /// <returns></returns>
-        private bool IsCapitalAlphabet(int alphabetsAsciiValue)
+        private bool IsCapitalAlphabet(char alphabet)
         {
-            return (alphabetsAsciiValue >= 65 && alphabetsAsciiValue <= 90);
+            return (alphabet >= 'A' && alphabet <= 'Z');
         }
         /// <summary>
         /// To checkk is an Ascii value belongs to small alphabet
         /// </summary>
-        /// <param name="alphabetsAsciiValue"></param>
+        /// <param name="alphabet"></param>
         /// <returns></returns>
-        private bool IsSmallAlphabet(int alphabetsAsciiValue)
+        private bool IsSmallAlphabet(char alphabet)
         {
-            return (alphabetsAsciiValue >= 97 && alphabetsAsciiValue <= 122);
+            return (alphabet >= 'a' && alphabet <= 'z');
         }
 
         /// <summary>
@@ -44,65 +44,67 @@ namespace CaeserCipherAlgorithm
         /// <returns> StringBuilder</returns>
         public StringBuilder DoCeaserCipher(string inputString, int shiftingFactor)
         {
-            char alphabetToBeAdded;
+            char appendAlphabet;
             for (int count = 0; count < inputString.Length; count++)
             {
-                int alphabetsAsciiValue = (int)(inputString[count]);
-                if (IsAlphabet(alphabetsAsciiValue))
+                char alphabet = inputString[count];
+                if (IsAlphabet(alphabet))
                 {
-                    int alphabetsAsciiValueWithShiftinFactor = alphabetsAsciiValue + shiftingFactor;
+                    
+                    char ShiftedAlphabet = (char)((int)alphabet + (int)shiftingFactor);
 
                     // if the alphabetsAsciiValueWithShiftinFactor is within alphabet Ascii range
-                    if ((IsCapitalAlphabet(alphabetsAsciiValueWithShiftinFactor) && IsCapitalAlphabet(alphabetsAsciiValue)) || ((IsSmallAlphabet(alphabetsAsciiValueWithShiftinFactor) && IsSmallAlphabet(alphabetsAsciiValue))))
+                    if ((IsCapitalAlphabet(ShiftedAlphabet) && IsCapitalAlphabet(alphabet)) || ((IsSmallAlphabet(ShiftedAlphabet) && IsSmallAlphabet(alphabet))))
                     {
-                        char cipheredCharacter = (char)alphabetsAsciiValueWithShiftinFactor;
+                        char cipheredCharacter = (char)ShiftedAlphabet;
                         cipheredText.Append(cipheredCharacter);
                     }
                     else
                     {
                         if (shiftingFactor > 0)
                         {
-                            if (IsCapitalAlphabet(alphabetsAsciiValue))
+                            if (IsCapitalAlphabet(alphabet))
                             {
-                                while (!IsCapitalAlphabet(alphabetsAsciiValueWithShiftinFactor))
+                                while (!IsCapitalAlphabet(ShiftedAlphabet))
                                 {
-                                    alphabetsAsciiValueWithShiftinFactor = 64 + (alphabetsAsciiValueWithShiftinFactor - 90);
+                                    ShiftedAlphabet = (char)(('A'-1)+ (ShiftedAlphabet - 'Z'));
+
                                 }
 
-                                alphabetToBeAdded = (char)alphabetsAsciiValueWithShiftinFactor;
-                                cipheredText.Append(alphabetToBeAdded);
+                                appendAlphabet = (char)ShiftedAlphabet;
+                                cipheredText.Append(appendAlphabet);
                             }
-                            else if (IsSmallAlphabet(alphabetsAsciiValue))
+                            else if (IsSmallAlphabet(alphabet))
                             {
-                                while (!IsSmallAlphabet(alphabetsAsciiValueWithShiftinFactor))
+                                while (!IsSmallAlphabet(ShiftedAlphabet))
                                 {
-                                    alphabetsAsciiValueWithShiftinFactor = 96 + (alphabetsAsciiValueWithShiftinFactor - 122);
+                                    ShiftedAlphabet = (char)(('a'-1) + (ShiftedAlphabet - 'z'));
                                 }
 
-                                alphabetToBeAdded = (char)alphabetsAsciiValueWithShiftinFactor;
-                                cipheredText.Append(alphabetToBeAdded);
+                                appendAlphabet = (char)ShiftedAlphabet;
+                                cipheredText.Append(appendAlphabet);
                             }
                         }
                         else
                         {
-                            if (IsCapitalAlphabet(alphabetsAsciiValue))
+                            if (IsCapitalAlphabet(alphabet))
                             {
 
-                                while(alphabetsAsciiValueWithShiftinFactor < 65)
+                                while(ShiftedAlphabet < 'A')
                                 {
-                                    alphabetsAsciiValueWithShiftinFactor = 90 - (64 - alphabetsAsciiValueWithShiftinFactor);
+                                    ShiftedAlphabet = (char)('Z' - (('A'-1) - ShiftedAlphabet));
                                 }
-                                alphabetToBeAdded = (char)alphabetsAsciiValueWithShiftinFactor;
-                                cipheredText.Append(alphabetToBeAdded);
+                                appendAlphabet = (char)ShiftedAlphabet;
+                                cipheredText.Append(appendAlphabet);
                             }
-                            else if (IsSmallAlphabet(alphabetsAsciiValue))
+                            else if (IsSmallAlphabet(alphabet))
                             {
-                                while(alphabetsAsciiValueWithShiftinFactor < 97)
+                                while(ShiftedAlphabet < 'a')
                                 {
-                                    alphabetsAsciiValueWithShiftinFactor = 122 - (96 - alphabetsAsciiValueWithShiftinFactor);
+                                    ShiftedAlphabet = (char)('z' - (('a'-1) - ShiftedAlphabet));
                                 }
-                                alphabetToBeAdded = (char)alphabetsAsciiValueWithShiftinFactor;
-                                cipheredText.Append(alphabetToBeAdded);
+                                appendAlphabet = (char)ShiftedAlphabet;
+                                cipheredText.Append(appendAlphabet);
                             }
                         }
 
