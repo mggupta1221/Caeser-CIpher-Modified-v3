@@ -20,9 +20,9 @@ namespace CaeserCipherAlgorithm
             //Shifting Factor Value must be Between (-25,25) i.e -25 to 25 including both
             shiftingFactor = shiftingFactor % 26;
             Console.WriteLine($"Main Shifting factor:{shiftingFactor}");
-            for (int count = 0; count < inputText.Length; count++)
+
+            foreach(char alphabet in inputText)
             {
-                char alphabet = inputText[count];
                 if (char.IsLetter(alphabet))
                 {
                     
@@ -31,9 +31,7 @@ namespace CaeserCipherAlgorithm
                     // if the alphabetsAsciiValueWithShiftinFactor is within alphabet Ascii range
                     if ((char.IsUpper(ShiftedAlphabet) && char.IsUpper(alphabet)) || ((char.IsLower(ShiftedAlphabet) && char.IsLower(alphabet))))
                     {
-                        
-                        char cipheredCharacter = ShiftedAlphabet;
-                        cipheredText.Append(cipheredCharacter);
+                        cipheredText.Append(ShiftedAlphabet);
                     }
                     else
                     {
@@ -89,7 +87,7 @@ namespace CaeserCipherAlgorithm
                 else
                 {
                     //if the Ascii Value not corresponds to An Alphabet(Capital Or Small)
-                    cipheredText.Append(inputText[count]); 
+                    cipheredText.Append(alphabet); 
                 }
             }
             return cipheredText;
