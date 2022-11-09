@@ -39,15 +39,15 @@ namespace CaeserCipherAlgorithm
         /// <summary>
         /// Method to implement Caser cipher Algorithm
         /// </summary>
-        /// <param name="inputString"></param>
+        /// <param name="inputText"></param>
         /// <param name="shiftingFactor"></param>
         /// <returns> StringBuilder</returns>
-        public StringBuilder DoCeaserCipher(string inputString, int shiftingFactor)
+        public StringBuilder DoCeaserCipher(string inputText, int shiftingFactor)
         {
             char appendAlphabet;
-            for (int count = 0; count < inputString.Length; count++)
+            for (int count = 0; count < inputText.Length; count++)
             {
-                char alphabet = inputString[count];
+                char alphabet = inputText[count];
                 if (IsAlphabet(alphabet))
                 {
                     
@@ -113,7 +113,7 @@ namespace CaeserCipherAlgorithm
                 else
                 {
                     //if the Ascii Value not corresponds to An Alphabet(Capital Or Small)
-                    cipheredText.Append(inputString[count]); 
+                    cipheredText.Append(inputText[count]); 
                 }
             }
             return cipheredText;
