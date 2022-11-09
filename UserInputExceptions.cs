@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace CaeserCipherAlgorithm
 {
-
-    public class InputTextException : Exception
+    /// <summary>
+    /// Exception: Throw If Input Text Is Null Or Empty
+    /// </summary>
+    public sealed class InputTextException : Exception
     {
         public InputTextException(string message) : base(message) { }
 
     }
-
-    public class ShiftingFactorException : Exception
+    /// <summary>
+    /// Exception: Throw If ShiftingFactor Is Not Valid
+    /// </summary>
+    public sealed class ShiftingFactorException : Exception
     {
         public ShiftingFactorException(string message) : base(message) { }
     }

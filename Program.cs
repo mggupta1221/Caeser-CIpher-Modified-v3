@@ -14,6 +14,7 @@ public class Program
                 throw new InputTextException("Input Text Is Empty Or Null");
             }
             Console.Write("Enter Shifting factor:");
+            // check entered factor is valid or not
             bool isValidShiftingFactor = long.TryParse(Console.ReadLine(), out long  shiftingFactor);
             if (isValidShiftingFactor)
             {
