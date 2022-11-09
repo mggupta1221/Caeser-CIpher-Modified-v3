@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gupt_muk\\Desktop\\Caeser-cipher-modified-v2-master\\CaeserCipher\\CaeserCipherAlgorithm.csproj",
+      "projectUniqueName": "C:\\Users\\gupt_muk\\Source\\Repos\\Caeser-CIpher-Modified-v3\\CaeserCipherAlgorithm.csproj",
       "projectName": "CaeserCipherAlgorithm",
-      "projectPath": "C:\\Users\\gupt_muk\\Desktop\\Caeser-cipher-modified-v2-master\\CaeserCipher\\CaeserCipherAlgorithm.csproj",
+      "projectPath": "C:\\Users\\gupt_muk\\Source\\Repos\\Caeser-CIpher-Modified-v3\\CaeserCipherAlgorithm.csproj",
       "packagesPath": "C:\\Users\\gupt_muk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gupt_muk\\Desktop\\Caeser-cipher-modified-v2-master\\CaeserCipher\\obj\\",
+      "outputPath": "C:\\Users\\gupt_muk\\Source\\Repos\\Caeser-CIpher-Modified-v3\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

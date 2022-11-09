@@ -7,7 +7,7 @@ namespace CaeserCipherAlgorithm
     {
         private StringBuilder cipheredText = new StringBuilder();
 
-       
+
 
         private bool IsAlphabet(int alphabetsAsciiValue)
         {
@@ -21,7 +21,9 @@ namespace CaeserCipherAlgorithm
         {
             return (alphabetsAsciiValue >= 97 && alphabetsAsciiValue <= 122);
         }
-        public StringBuilder DoCeaserCipher(string inputString, int shiftingFactor) 
+
+
+        public StringBuilder DoCeaserCipher(string inputString, int shiftingFactor)
         {
             char alphabetToBeAdded;
             for (int count = 0; count < inputString.Length; count++)
@@ -41,13 +43,21 @@ namespace CaeserCipherAlgorithm
                         {
                             if (IsCapitalAlphabet(alphabetsAsciiValue))
                             {
-                               alphabetsAsciiValueWithShiftinFactor = 64 + (alphabetsAsciiValueWithShiftinFactor - 90);
+                                while (!IsCapitalAlphabet(alphabetsAsciiValueWithShiftinFactor))
+                                {
+                                    alphabetsAsciiValueWithShiftinFactor = 64 + (alphabetsAsciiValueWithShiftinFactor - 90);
+                                }
+
                                 alphabetToBeAdded = (char)alphabetsAsciiValueWithShiftinFactor;
                                 cipheredText.Append(alphabetToBeAdded);
                             }
-                            else if (IsSmallAlphabet(alphabetsAsciiValue)) 
+                            else if (IsSmallAlphabet(alphabetsAsciiValue))
                             {
-                                alphabetsAsciiValueWithShiftinFactor = 96 + (alphabetsAsciiValueWithShiftinFactor - 122);
+                                while (!IsSmallAlphabet(alphabetsAsciiValueWithShiftinFactor))
+                                {
+                                    alphabetsAsciiValueWithShiftinFactor = 96 + (alphabetsAsciiValueWithShiftinFactor - 122);
+                                }
+
                                 alphabetToBeAdded = (char)alphabetsAsciiValueWithShiftinFactor;
                                 cipheredText.Append(alphabetToBeAdded);
                             }
@@ -58,14 +68,14 @@ namespace CaeserCipherAlgorithm
                             {
                                 if (alphabetsAsciiValueWithShiftinFactor < 65)
                                 {
-                                   alphabetsAsciiValueWithShiftinFactor = 90 - (64 - alphabetsAsciiValueWithShiftinFactor);
+                                    alphabetsAsciiValueWithShiftinFactor = 90 - (64 - alphabetsAsciiValueWithShiftinFactor);
                                 }
                                 alphabetToBeAdded = (char)alphabetsAsciiValueWithShiftinFactor;
                                 cipheredText.Append(alphabetToBeAdded);
                             }
-                            else if (IsSmallAlphabet(alphabetsAsciiValue) && alphabetsAsciiValueWithShiftinFactor < 97) 
+                            else if (IsSmallAlphabet(alphabetsAsciiValue) && alphabetsAsciiValueWithShiftinFactor < 97)
                             {
-                               alphabetsAsciiValueWithShiftinFactor = 122 - (96 - alphabetsAsciiValueWithShiftinFactor);
+                                alphabetsAsciiValueWithShiftinFactor = 122 - (96 - alphabetsAsciiValueWithShiftinFactor);
                                 alphabetToBeAdded = (char)alphabetsAsciiValueWithShiftinFactor;
                                 cipheredText.Append(alphabetToBeAdded);
                             }
@@ -82,3 +92,4 @@ namespace CaeserCipherAlgorithm
         }
     }
 }
+
