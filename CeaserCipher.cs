@@ -8,7 +8,7 @@ namespace CaeserCipherAlgorithm
         private StringBuilder cipheredText = new StringBuilder();
         private char shiftedAlphabet;
         /// <summary>
-        /// Method to implement Caser cipher Algorithm
+        /// Method to implement Caeser cipher Algorithm
         /// </summary>
         /// <param name="inputText"></param>
         /// <param name="shiftingFactor"></param>
@@ -44,7 +44,6 @@ namespace CaeserCipherAlgorithm
 
                                 }
 
-                         
                                 cipheredText.Append(shiftedAlphabet);
                             }
                             else if (char.IsLower(alphabet))
